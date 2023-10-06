@@ -1,6 +1,5 @@
 <template>
   <li>
-    <!-- Отображаем текст элемента, переданный через props -->
     <h2>
       {{ itemName }}
     </h2>
@@ -13,8 +12,8 @@
 <script>
 export default {
   props: {
-    itemName: String, // Принимаем текст элемента через props
-    itemText: String, // Принимаем текст элемента через props
+    itemName: String,
+    itemText: String,
   },
 };
 </script>

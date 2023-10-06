@@ -10,7 +10,6 @@
         :itemName="item.name"
         :itemText="item.text"
       >
-        <!-- Передаем текст элемента в компонент ItemList через props -->
       </item-list>
     </ul>
     <footer>
@@ -20,11 +19,11 @@
 </template>
 
 <script>
-import ItemList from "@/components/ItemList.vue"; // Импортируем компонент ItemList
+import ItemList from "@/components/ItemList.vue";
 
 export default {
   components: {
-    ItemList, // Регистрируем компонент ItemList для использования в шаблоне
+    ItemList,
   },
   data() {
     return {
@@ -32,7 +31,7 @@ export default {
         { name: "Элемент 1", text: "Описание 1" },
         { name: "Элемент 2", text: "Описание 2" },
         { name: "Элемент 3", text: "Описание 3" },
-      ], // Массив объектов, содержащий элементы и описания
+      ],
     };
   },
 };
