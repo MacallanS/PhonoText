@@ -13,7 +13,7 @@
         </nav>
         <div class="header__buttons">
           <button class="header__button">Вход</button>
-          <button class="header__button">Регистрация</button>
+          <button class="header__button">Welcome to the club</button>
         </div>
       </div>
     </div>
