@@ -8,13 +8,12 @@
           :key="index"
           :message="message"
           class="main__item"
-          :class="{
-            'animate-fade': index === messageIndex,
-            'animate-fade-in': index !== messageIndex,
-          }"
-        ></item-list>
+        >
+          <button @click="deleteMessage(index)" class="delete-button">Удалить</button>
+        </item-list>
       </ul>
-      <button @click="replaceMessage" class="button app__button">Заменить строку</button>
+      <button @click="replaceMessages" class="button app__button">Заменить строки</button>
+      <button @click="deleteMessage" class="button app__button">Удалить строки</button>
     </main>
     <Footer class="app__footer" />
   </div>
@@ -36,7 +35,6 @@ export default {
     return {
       messages: [],
       data: null,
-      messageIndex: -1, // Индекс сообщения, которое будет заменено
     };
   },
   mounted() {
@@ -51,16 +49,22 @@ export default {
       });
   },
   methods: {
-    replaceMessage() {
-      const indexToReplace = this.data.replace.index;
-      const newText = this.data.replace.text;
+    replaceMessages() {
+      for (const key in this.data.changes.replace.info) {
+        const changeInfo = this.data.changes.replace.info[key];
+        const indexToReplace = changeInfo.index;
+        const newText = changeInfo.text;
 
-      this.messageIndex = indexToReplace;
-
-      setTimeout(() => {
         this.messages[indexToReplace] = newText;
-        this.messageIndex = -1;
-      }, 1000);
+      }
+    },
+    deleteMessage() {
+      const deleteIndices = this.data.changes.delete; // Массив индексов для удаления
+      deleteIndices.sort((a, b) => b - a); // Сортировка индексов в убывающем порядке
+
+      for (const deleteIndex of deleteIndices) {
+        this.messages.splice(deleteIndex, 1); // Удаляем один элемент по индексу
+      }
     },
   },
 };
@@ -96,22 +100,16 @@ export default {
   background-color: #0056b3;
 }
 
-.animate-fade {
-  transition: opacity 1s;
-  opacity: 0;
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.animate-fade-in {
-  transition: opacity 1s;
-  opacity: 1;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.delete-button:hover {
+  background-color: #ff3333;
 }
 </style>
