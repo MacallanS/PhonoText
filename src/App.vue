@@ -59,11 +59,11 @@ export default {
       }
     },
     deleteMessage() {
-      const deleteIndices = this.data.changes.delete; // Массив индексов для удаления
-      deleteIndices.sort((a, b) => b - a); // Сортировка индексов в убывающем порядке
+      const deleteIndices = this.data.changes.delete;
+      deleteIndices.sort((a, b) => b - a);
 
       for (const deleteIndex of deleteIndices) {
-        this.messages.splice(deleteIndex, 1); // Удаляем один элемент по индексу
+        this.messages.splice(deleteIndex, 1);
       }
     },
   },
