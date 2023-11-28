@@ -19,6 +19,7 @@
       </label>
     </li>
   </ul>
+  <button class="btn">Посмотреть</button>
 </template>
 
 <script>
@@ -30,5 +31,11 @@ export default {
 <style scoped>
 .poem {
   display: flex;
+}
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(119, 224, 119);
+  border: 1px solid black;
 }
 </style>
