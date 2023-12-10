@@ -4,21 +4,18 @@
       <li class="form__item">
         <label for="1" class="form__label">
           <input type="radio" id="1" name="poem" class="form__radio-input" />
-          <img src="" alt="" class="form__image" />
           <span class="form__text">Стих 1</span>
         </label>
       </li>
       <li class="form__item">
         <label for="2" class="form__label">
           <input type="radio" id="2" name="poem" class="form__radio-input" />
-          <img src="" alt="" class="form__image" />
           <span class="form__text">Стих 2</span>
         </label>
       </li>
       <li class="form__item">
         <label for="3" class="form__label">
           <input type="radio" id="3" name="poem" class="form__radio-input" />
-          <img src="" alt="" class="form__image" />
           <span class="form__text">Стих 3</span>
         </label>
       </li>
