@@ -20,57 +20,54 @@
     </div>
   </footer>
 </template>
-
 <script>
-export default {
-  name: "Footer",
-};
 </script>
+<style scoped lang="scss">
+@use "@/assets/scss/fonts" as *;
 
-<style scoped>
 .footer {
   background-color: #333;
   color: #fff;
   padding: 20px 0;
   text-align: center;
-}
 
-.footer__wrapper {
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  max-width: 1170px;
-}
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1170px;
+  }
 
-.footer__column {
-  text-align: left;
-}
+  &__column {
+    text-align: left;
 
-.footer__column h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
+    h3 {
+      @include manrope-font(1.9rem, normal);
+      margin-bottom: 10px;
+    }
 
-.footer__column p {
-  font-size: 0.9rem;
-  margin: 5px 0;
-}
+    p {
+      @include manrope-font(1.1rem, normal);
+      margin: 5px 0;
+    }
 
-.footer__column ul {
-  list-style: none;
-  padding: 0;
-}
+    ul {
+      list-style: none;
+      padding: 0;
 
-.footer__column li {
-  margin-bottom: 5px;
-}
+      li {
+        margin-bottom: 5px;
 
-.footer__column a {
-  text-decoration: none;
-  color: #fff;
-}
+        a {
+          text-decoration: none;
+          color: #fff;
 
-.footer__column a:hover {
-  text-decoration: underline;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
 }
 </style>

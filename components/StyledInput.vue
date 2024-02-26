@@ -16,21 +16,20 @@ export default {
   emits: ['update:modelValue']
 }
 </script>
-
-<style scoped>
+<style scoped lang="scss">
 .input-component {
   margin-bottom: 1rem;
-}
 
-.input-component label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
 
-.input-component input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  & input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
 }
 </style>
