@@ -1,21 +1,23 @@
 <template>
   <div class="app">
-    <Header class="app__header" />
+    <Header/>
     <main class="app__main main__wrapper">
       <div class="info">
         <ul class="main__list">
           <item-list
-            v-for="(message, index) in messages"
-            :key="index"
-            :message="message"
-            class="main__item"
+              v-for="(message, index) in messages"
+              :key="index"
+              :message="message"
+              class="main__item"
           >
           </item-list>
         </ul>
       </div>
-      <div class="poems"><Poems></Poems></div>
+      <div class="poems">
+        <Poems/>
+      </div>
     </main>
-    <Footer class="app__footer" />
+    <Footer class="app__footer"/>
   </div>
 </template>
 
@@ -25,6 +27,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Poems from "@/components/Poems.vue";
 import axios from "axios";
+
 export default {
   components: {
     ItemList,
@@ -40,16 +43,16 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:8088")
-      .then(async (response) => {
-        this.messages = response.data.messages;
-        this.data = response.data;
+        .get("http://localhost:8088")
+        .then(async (response) => {
+          this.messages = response.data.messages;
+          this.data = response.data;
 
-        await this.executeActionsWithDelay();
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+          await this.executeActionsWithDelay();
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   },
   methods: {
     async executeActionsWithDelay() {
@@ -88,13 +91,13 @@ export default {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/montserrat-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("./fonts/montserrat-v26-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
-  padding: 0px;
+  padding: 0;
   margin: 0;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
 }
 
 ul {
@@ -112,32 +115,6 @@ ul {
 .app {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-}
-
-.button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.delete-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-button:hover {
-  background-color: #ff3333;
 }
 
 .info {
