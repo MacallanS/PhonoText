@@ -20,14 +20,16 @@
         </label>
       </li>
     </ul>
-    <button class="btn form__button" type="submit">Посмотреть</button>
+    <Button>Посмотреть</Button>
   </form>
 </template>
 
 <script>
 import axios from "axios";
+import Button from "@/components/Button.vue";
 export default {
   name: "Poems",
+  components: {Button},
   data() {
     return {
       selectedPoem: null,
@@ -90,19 +92,5 @@ export default {
 
 .form__text {
   font-size: 16px;
-}
-
-.form__button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.form__button:hover {
-  background-color: #0056b3;
 }
 </style>
