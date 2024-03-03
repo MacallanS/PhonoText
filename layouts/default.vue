@@ -1,9 +1,21 @@
 <template>
-    <div>
+    <div class="body">
         <TheHeader />
-        <slot />
+        <div class="main">
+          <slot/>
+        </div>
         <TheFooter />
     </div>
 </template>
-<script setup lang="ts"></script>
-<style scoped lang="scss"></style>
+<script setup lang="ts">
+</script>
+<style scoped lang="scss">
+  .body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .main {
+    flex: 1;
+  }
+</style>
